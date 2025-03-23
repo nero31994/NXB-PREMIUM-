@@ -16,16 +16,17 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background: #f9f9f9;
-            color: #333;
+            background: url('https://saamarketing.co.uk/wp-content/uploads/2022/08/The-Different-Types-of-Technology-GIF.gif') no-repeat center center/cover;
+            color: #fff;
             text-align: center;
             padding: 20px;
+            backdrop-filter: blur(10px);
         }
         .container {
             padding: 20px;
             border-radius: 12px;
-            background: #fff;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            background: rgba(0, 0, 0, 0.7);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             width: 100%;
             max-width: 400px;
         }
@@ -39,7 +40,7 @@
         }
         p {
             font-size: 14px;
-            color: #555;
+            color: #ddd;
             margin-bottom: 20px;
             line-height: 1.5;
         }
@@ -74,25 +75,69 @@
             top: 0;
             border: none;
         }
+
+        /* Responsive adjustments for landscape */
+        @media screen and (min-width: 600px) and (max-height: 400px) { 
+            body {
+                flex-direction: row;
+                align-items: center;
+            }
+            .container {
+                max-width: 600px;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                text-align: left;
+                padding: 30px;
+            }
+            .logo {
+                width: 120px;
+                margin-bottom: 0;
+            }
+            .content {
+                flex: 1;
+                padding-right: 20px;
+            }
+            .video-container {
+                width: 50%;
+                padding-bottom: 25%;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <img class="logo" src="https://i.ibb.co/vxYGP3h8/Photoroom-20240720-094102.png" alt="NXB PREMIUM Logo">
-        <h1>NXB PREMIUM</h1>
-        <p>
-            Introducing <b>NXB PREMIUM</b> – a very stable and highly compatible app for Android TV,  
-            offering over <b>2,500+ channels</b>, including high-quality movies from <b>HBO</b>,  
-            world channels, and <b>live sports</b> with real-time updates, especially <b>NBA games</b>!  
-            Most local channels are included, and since it’s <b>server-sided</b>, it updates automatically.  
-            Try it now!
-        </p>
-        <a class="download-btn" href="https://kwmbhphzkhr8kkiu.public.blob.vercel-storage.com/NXB%20PREMIUM_Encrypted-tQXKMTt6kvI6aINSY1nUGMsWeSFe6b.apk" download>
-            Download APK
-        </a>
+        <div class="content">
+            <h1>NXB PREMIUM</h1>
+            <p>
+                Introducing <b>NXB PREMIUM</b> – a very stable and highly compatible app for Android TV,  
+                offering over <b>2,500+ channels</b>, including high-quality movies from <b>HBO</b>,  
+                world channels, and <b>live sports</b> with real-time updates, especially <b>NBA games</b>!  
+                Most local channels are included, and since it’s <b>server-sided</b>, it updates automatically.  
+                Try it now!
+            </p>
+            <a class="download-btn" href="https://kwmbhphzkhr8kkiu.public.blob.vercel-storage.com/NXB%20PREMIUM_Encrypted-tQXKMTt6kvI6aINSY1nUGMsWeSFe6b.apk" download>
+                Download APK
+            </a>
+        </div>
         <div class="video-container">
             <iframe allow="fullscreen; autoplay" allowfullscreen src="https://streamable.com/e/vvkbe9?autoplay=1"></iframe>
         </div>
     </div>
 </body>
 </html>
+
+
+---
+
+What's New:
+
+✅ Background image added (adjusts to screen size)
+✅ Blur effect for a clean and modern look
+✅ Dark-themed UI (better readability)
+✅ Mobile & landscape mode optimized
+
+Would you like a different background image or any other improvements? 🚀
+
