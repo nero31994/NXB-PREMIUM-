@@ -51,6 +51,19 @@
         .download-btn:hover {
             background: #0056b3;
         }
+        .red-btn {
+            background: #dc3545;
+        }
+        .red-btn:hover {
+            background: #a71d2a;
+        }
+        .button-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: center;
+            margin-top: 10px;
+        }
         .video-container {
             position: relative;
             width: 100%;
@@ -88,6 +101,11 @@
                 max-width: 50%;
                 padding-bottom: 28%;
             }
+            .button-group {
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: flex-start;
+            }
         }
     </style>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9160117914244177"
@@ -103,11 +121,17 @@
             world channels, and <b>live sports</b> with real-time updates, especially <b>NBA games</b>!  
             Most local channels are included, and since it’s <b>server-sided</b>, it updates automatically.  
             Try it now!
-            note:this app may flag by google because this app is not on google playstore source to bypass google verification you need to disable play protect go to play store app->click profile->select play ptotect->and disable scan apps.
+            <br><br>
+            <b>Note:</b> This app may be flagged by Google because it is not on the Play Store. To bypass Google Play Protect, go to the Play Store app → click your profile → select "Play Protect" → and disable "Scan apps with Play Protect."
         </p>
-        <a class="download-btn" href="https://devuploads.com/xam0bfww44w1" download>
-            Download APK
-        </a>
+        <div class="button-group">
+            <a class="download-btn" href="https://devuploads.com/xam0bfww44w1" download>
+                Download APK(for smartphone)
+            </a>
+            <a class="download-btn red-btn" href="https://nxbprem.netlify.app/apk/iptvfortv.apk" download>
+                Download APK (for android tv)
+            </a>
+        </div>
     </div>
     <div class="video-container">
         <iframe allow="fullscreen; autoplay" allowfullscreen src="https://streamable.com/e/7iqluc?autoplay=1"></iframe>
