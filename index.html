@@ -1,140 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=0.8">
-    <title>Download NXB PREMIUM</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-        body {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background: url('https://64.media.tumblr.com/a7d100aabe2033b2fff1b7d5bf6af05f/tumblr_nlprx4nuGI1relaado1_400.gif') no-repeat center center/cover;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-        }
-        .logo {
-            width: 120px;
-            margin-bottom: 15px;
-        }
-        h1 {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-        p {
-            font-size: 16px;
-            color: #ddd;
-            margin-bottom: 20px;
-            line-height: 1.5;
-            max-width: 600px;
-        }
-        .download-btn {
-            display: inline-block;
-            padding: 14px 20px;
-            font-size: 18px;
-            font-weight: bold;
-            color: #fff;
-            background: #007bff;
-            text-decoration: none;
-            border-radius: 8px;
-            transition: background 0.3s;
-        }
-        .download-btn:hover {
-            background: #0056b3;
-        }
-        .red-btn {
-            background: #dc3545;
-        }
-        .red-btn:hover {
-            background: #a71d2a;
-        }
-        .button-group {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            align-items: center;
-            margin-top: 10px;
-        }
-        .video-container {
-            position: relative;
-            width: 100%;
-            max-width: 600px;
-            height: 0;
-            padding-bottom: 56.25%;
-            margin-top: 20px;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-        .video-container iframe {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            left: 0;
-            top: 0;
-            border: none;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=0.8" />
+  <title>Download NXB PREMIUM</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: url('https://64.media.tumblr.com/a7d100aabe2033b2fff1b7d5bf6af05f/tumblr_nlprx4nuGI1relaado1_400.gif') no-repeat center center/cover;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+    .logo {
+      width: 120px;
+      margin-bottom: 15px;
+    }
+    h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 16px;
+      color: #ddd;
+      margin-bottom: 20px;
+      line-height: 1.5;
+      max-width: 600px;
+    }
+    .download-btn {
+      display: inline-block;
+      padding: 14px 20px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #fff;
+      background: #007bff;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+    .download-btn:hover {
+      background: #0056b3;
+    }
+    .red-btn {
+      background: #dc3545;
+    }
+    .red-btn:hover {
+      background: #a71d2a;
+    }
+    .premium-btn {
+      background: linear-gradient(45deg, #ffcc00, #ff9900);
+      color: #000;
+      border: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      animation: pulse 1.8s infinite ease-in-out;
+      box-shadow: 0 0 0 rgba(255, 204, 0, 0.6);
+    }
+    .premium-btn:hover {
+      background: linear-gradient(45deg, #e6b800, #cc8400);
+      transform: scale(1.05);
+      box-shadow: 0 0 12px rgba(255, 204, 0, 0.6);
+    }
 
-        /* Landscape mode adjustments */
-        @media screen and (min-width: 600px) and (max-height: 450px) {
-            body {
-                flex-direction: row;
-                justify-content: space-around;
-                align-items: center;
-                text-align: left;
-            }
-            .logo {
-                width: 140px;
-            }
-            .content {
-                max-width: 50%;
-            }
-            .video-container {
-                max-width: 50%;
-                padding-bottom: 28%;
-            }
-            .button-group {
-                flex-direction: row;
-                justify-content: flex-start;
-                align-items: flex-start;
-            }
-        }
-    </style>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9160117914244177"
-     crossorigin="anonymous"></script>
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 204, 0, 0.6);
+      }
+      70% {
+        transform: scale(1.05);
+        box-shadow: 0 0 12px 10px rgba(255, 204, 0, 0);
+      }
+      100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 204, 0, 0);
+      }
+    }
+
+    .button-group {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      max-width: 600px;
+      height: 0;
+      padding-bottom: 56.25%;
+      margin-top: 20px;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .video-container iframe {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      border: none;
+    }
+
+    @media screen and (min-width: 600px) and (max-height: 450px) {
+      body {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        text-align: left;
+      }
+      .logo {
+        width: 140px;
+      }
+      .content {
+        max-width: 50%;
+      }
+      .video-container {
+        max-width: 50%;
+        padding-bottom: 28%;
+      }
+      .button-group {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+      }
+    }
+  </style>
+  <script
+    async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9160117914244177"
+    crossorigin="anonymous"
+  ></script>
 </head>
 <body>
-    <img class="logo" src="https://i.ibb.co/vxYGP3h8/Photoroom-20240720-094102.png" alt="NXB PREMIUM Logo">
-    <div class="content">
-        <h1>NXB PREMIUM</h1>
-        <p>
-            Introducing <b>NXB PREMIUM</b> – a very stable and highly compatible app for Android TV,  
-            offering over <b>2,500+ channels</b>, including high-quality movies from <b>HBO</b>,  
-            world channels, and <b>live sports</b> with real-time updates, especially <b>NBA games</b>!  
-            Most local channels are included, and since it’s <b>server-sided</b>, it updates automatically.  
-            Try it now!
-            <br><br>
-            <b>Note:</b> This app may be flagged by Google because it is not on the Play Store. To bypass Google Play Protect, go to the Play Store app → click your profile → select "Play Protect" → and disable "Scan apps with Play Protect."
-        </p>
-        <div class="button-group">
-            <a class="download-btn" href="https://devuploads.com/xam0bfww44w1" download>
-                Download APK(for smartphone)
-            </a>
-            <a class="download-btn red-btn" href="https://nxbprem.netlify.app/apk/iptvfortv.apk" download>
-                Download APK (for android tv)
-            </a>
-        </div>
+  <img
+    class="logo"
+    src="https://i.ibb.co/vxYGP3h8/Photoroom-20240720-094102.png"
+    alt="NXB PREMIUM Logo"
+  />
+  <div class="content">
+    <h1>NXB PREMIUM</h1>
+    <p>
+      Introducing <b>NXB PREMIUM</b> – a very stable and highly compatible app for Android TV,  
+      offering over <b>2,500+ channels</b>, including high-quality movies from <b>HBO</b>,  
+      world channels, and <b>live sports</b> with real-time updates, especially <b>NBA games</b>!  
+      Most local channels are included, and since it’s <b>server-sided</b>, it updates automatically.  
+      Try it now!
+      <br /><br />
+      <b>Note:</b> This app may be flagged by Google because it is not on the Play Store. To bypass Google Play Protect, go to the Play Store app → click your profile → select "Play Protect" → and disable "Scan apps with Play Protect."
+    </p>
+    <div class="button-group">
+      <a
+        class="download-btn"
+        href="https://devuploads.com/xam0bfww44w1"
+        download
+        >Download APK (for smartphone)</a
+      >
+      <a
+        class="download-btn red-btn"
+        href="https://nxbprem.netlify.app/apk/iptvfortv.apk"
+        download
+        >Download APK (for android tv)</a
+      >
+      <a
+        class="download-btn premium-btn"
+        href="https://your-premium-link.com"
+        download
+        ><i class="fas fa-crown"></i> Download PREMIUM Version</a
+      >
     </div>
-    <div class="video-container">
-        <iframe allow="fullscreen; autoplay" allowfullscreen src="https://streamable.com/e/7iqluc?autoplay=1"></iframe>
-    </div>
+  </div>
+  <div class="video-container">
+    <iframe
+      allow="fullscreen; autoplay"
+      allowfullscreen
+      src="https://streamable.com/e/7iqluc?autoplay=1"
+    ></iframe>
+  </div>
 </body>
 </html>
