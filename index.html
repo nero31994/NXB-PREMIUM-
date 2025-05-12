@@ -193,5 +193,38 @@
     </div>
   </div>
   <b>Note:</b> This app may be flagged by Google because it is not on the Play Store. To bypass Google Play Protect, go to the Play Store app → click your profile → select "Play Protect" → and disable "Scan apps with Play Protect."
+<script>
+(() => {
+    // Block DevTools
+    setInterval(() => {
+        const start = performance.now();
+        debugger;
+        if (performance.now() - start > 50) {
+            document.body.innerHTML = "<h1>DevTools are not allowed!</h1>";
+        }
+    }, 1000);
+
+    // Disable right-click
+    document.addEventListener("contextmenu", e => e.preventDefault());
+
+    // Disable F12, Ctrl+Shift+I/J, Ctrl+U
+    document.addEventListener("keydown", e => {
+        if (
+            e.keyCode === 123 || // F12
+            (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J")) || // Ctrl+Shift+I/J
+            (e.ctrlKey && e.key === "u") // Ctrl+U
+        ) {
+            e.preventDefault();
+        }
+    });
+
+    // Disable text selection and dragging
+    document.addEventListener("selectstart", e => e.preventDefault());
+    document.addEventListener("dragstart", e => e.preventDefault());
+
+    // Clear console outputs
+    ["log", "debug", "warn", "error"].forEach(fn => console[fn] = () => {});
+})();
+</script>
 </body>
 </html>
