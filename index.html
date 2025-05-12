@@ -21,7 +21,7 @@
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      background: url('https://nxbprem.netlify.app/AI-TV-Part-1_thumb728F.gif') no-repeat center center/cover;
+      background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxuRGqtytrlmxD2rb4LnAGXtEfZjZDiEH9-fz_Brfbso7hcnvaWa6x-CIc&s=10') no-repeat center center/cover;
       color: #fff;
       text-align: center;
       padding: 20px;
@@ -157,6 +157,54 @@
         align-items: flex-start;
       }
     }
+
+    /* New Landscape Optimization for All Mobile Devices */
+    @media screen and (max-height: 450px) and (orientation: landscape) {
+      body {
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 10px;
+        justify-content: space-evenly;
+        align-items: center;
+        text-align: center;
+      }
+
+      .logo {
+        width: 80px;
+        margin-bottom: 10px;
+      }
+
+      .content {
+        max-width: 48%;
+      }
+
+      h1 {
+        font-size: 20px;
+      }
+
+      p {
+        font-size: 14px;
+        line-height: 1.4;
+        max-width: 100%;
+      }
+
+      .button-group {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+      }
+
+      .download-btn {
+        padding: 10px 14px;
+        font-size: 14px;
+      }
+
+      .video-container {
+        max-width: 48%;
+        padding-bottom: 30%;
+      }
+    }
   </style>
   <script
     async
@@ -193,6 +241,7 @@
     </div>
   </div>
   <b>Note:</b> This app may be flagged by Google because it is not on the Play Store. To bypass Google Play Protect, go to the Play Store app → click your profile → select "Play Protect" → and disable "Scan apps with Play Protect."
+
 <script>
 (() => {
     // Block DevTools
