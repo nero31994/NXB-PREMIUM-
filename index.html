@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=0.8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Download NXB PREMIUM</title>
   <link
     rel="stylesheet"
@@ -41,55 +41,68 @@
       line-height: 1.5;
       max-width: 600px;
     }
+
     .download-btn {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
       padding: 14px 20px;
-      font-size: 18px;
+      font-size: 16px;
       font-weight: bold;
-      color: #fff;
-      background: #007bff;
       text-decoration: none;
       border-radius: 8px;
-      transition: background 0.3s;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: fadeInUp 1s ease forwards;
+      opacity: 0;
     }
+
     .download-btn:hover {
-      background: #0056b3;
+      transform: scale(1.05);
     }
-    .red-btn {
-      background: #dc3545;
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
-    .red-btn:hover {
-      background: #a71d2a;
-    }
+
     .premium-btn {
       background: linear-gradient(45deg, #ffcc00, #ff9900);
       color: #000;
-      border: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      animation: pulse 1.8s infinite ease-in-out;
-      box-shadow: 0 0 0 rgba(255, 204, 0, 0.6);
+      animation-delay: 0.6s;
     }
+
     .premium-btn:hover {
       background: linear-gradient(45deg, #e6b800, #cc8400);
-      transform: scale(1.05);
       box-shadow: 0 0 12px rgba(255, 204, 0, 0.6);
     }
 
-    @keyframes pulse {
-      0% {
-        transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(255, 204, 0, 0.6);
-      }
-      70% {
-        transform: scale(1.05);
-        box-shadow: 0 0 12px 10px rgba(255, 204, 0, 0);
-      }
-      100% {
-        transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(255, 204, 0, 0);
-      }
+    .coffee-btn {
+      background: linear-gradient(135deg, #6f4e37, #a47149);
+      color: #fff;
+      animation-delay: 0.2s;
+    }
+
+    .coffee-btn:hover {
+      background: linear-gradient(135deg, #5c3b2c, #8f5f3a);
+      box-shadow: 0 0 10px rgba(111, 78, 55, 0.4);
+    }
+
+    .codegen-btn {
+      background: linear-gradient(135deg, #1e1e2f, #2d2d44);
+      color: #00ffcc;
+      animation-delay: 0.4s;
+    }
+
+    .codegen-btn:hover {
+      background: linear-gradient(135deg, #181827, #24243a);
+      box-shadow: 0 0 10px rgba(0, 255, 204, 0.3);
     }
 
     .button-group {
@@ -97,7 +110,7 @@
       flex-direction: column;
       gap: 12px;
       align-items: center;
-      margin-top: 10px;
+      margin-top: 20px;
     }
 
     .video-container {
@@ -110,6 +123,7 @@
       border-radius: 8px;
       overflow: hidden;
     }
+
     .video-container iframe {
       position: absolute;
       width: 100%;
@@ -164,37 +178,24 @@
       world channels, and <b>live sports</b> with real-time updates, especially <b>NBA games</b>!  
       Most local channels are included, and since it’s <b>server-sided</b>, it updates automatically.  
       Try it now!
-      <br /><br />
-      <div class="video-container">
-    <iframe
-      allow="fullscreen; autoplay"
-      allowfullscreen
-      src="https://streamable.com/e/7iqluc?autoplay=1"
-    ></iframe>
-      </div>
-        </p>
+    </p>
+
+    <div class="video-container">
+      <iframe allow="fullscreen; autoplay" allowfullscreen src="https://streamable.com/e/7iqluc?autoplay=1"></iframe>
+    </div>
+
     <div class="button-group">
-      <a
-        class="download-btn"
-        href="https://i.ibb.co/PZPqbFJC/Photoroom-20250307-172750-edit-14239319956158.png"
-        download
-        >Buy me coffee ☕ (Donate)</a
-      >
-      <a
-        class="download-btn red-btn"
-        href="https://nxbpremiumversion3codegen.pages.dev/"
-        download
-        >Code generator (to access the premium app.)</a
-      >
-      <a
-        class="download-btn premium-btn"
-        href="https://nxbprem.netlify.app/M3U IPTV_3.0.1.1.apk"
-        download
-        ><i class="fas fa-crown"></i> Download PREMIUM Version</a
-      >
+      <a class="download-btn coffee-btn" href="https://i.ibb.co/PZPqbFJC/Photoroom-20250307-172750-edit-14239319956158.png" download>
+        <i class="fas fa-mug-hot"></i> Buy Me a Coffee
+      </a>
+      <a class="download-btn codegen-btn" href="https://nxbpremiumversion3codegen.pages.dev/" download>
+        <i class="fas fa-key"></i> Code Generator
+      </a>
+      <a class="download-btn premium-btn" href="https://nxbprem.netlify.app/M3U%20IPTV_3.0.1.1.apk" download>
+        <i class="fas fa-crown"></i> Download PREMIUM Version
+      </a>
     </div>
   </div>
   <b>Note:</b> This app may be flagged by Google because it is not on the Play Store. To bypass Google Play Protect, go to the Play Store app → click your profile → select "Play Protect" → and disable "Scan apps with Play Protect."
-
 </body>
 </html>
