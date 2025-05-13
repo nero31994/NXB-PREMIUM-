@@ -41,7 +41,6 @@
       line-height: 1.5;
       max-width: 600px;
     }
-
     .download-btn {
       display: inline-flex;
       align-items: center;
@@ -55,56 +54,42 @@
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       animation: fadeInUp 1s ease forwards;
       opacity: 0;
+      cursor: pointer;
     }
-
     .download-btn:hover {
       transform: scale(1.05);
     }
-
     @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
-
     .premium-btn {
       background: linear-gradient(45deg, #ffcc00, #ff9900);
       color: #000;
       animation-delay: 0.6s;
     }
-
     .premium-btn:hover {
       background: linear-gradient(45deg, #e6b800, #cc8400);
       box-shadow: 0 0 12px rgba(255, 204, 0, 0.6);
     }
-
     .coffee-btn {
       background: linear-gradient(135deg, #6f4e37, #a47149);
       color: #fff;
       animation-delay: 0.2s;
     }
-
     .coffee-btn:hover {
       background: linear-gradient(135deg, #5c3b2c, #8f5f3a);
       box-shadow: 0 0 10px rgba(111, 78, 55, 0.4);
     }
-
     .codegen-btn {
       background: linear-gradient(135deg, #1e1e2f, #2d2d44);
       color: #00ffcc;
       animation-delay: 0.4s;
     }
-
     .codegen-btn:hover {
       background: linear-gradient(135deg, #181827, #24243a);
       box-shadow: 0 0 10px rgba(0, 255, 204, 0.3);
     }
-
     .button-group {
       display: flex;
       flex-direction: column;
@@ -112,27 +97,45 @@
       align-items: center;
       margin-top: 20px;
     }
-
-    .video-container {
-      position: relative;
-      width: 100%;
-      max-width: 600px;
-      height: 0;
-      padding-bottom: 56.25%;
-      margin-top: 20px;
-      border-radius: 8px;
-      overflow: hidden;
-    }
-
-    .video-container iframe {
-      position: absolute;
-      width: 100%;
-      height: 100%;
+    /* Popup Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
       left: 0;
       top: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-content {
+      width: 90%;
+      height: 90%;
+      background: #000;
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+    }
+    .modal-content iframe {
+      width: 100%;
+      height: 100%;
       border: none;
     }
-
+    .modal-close {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      background: red;
+      color: #fff;
+      padding: 6px 12px;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      z-index: 99999;
+    }
+    /* Responsive Styles */
     @media screen and (min-width: 600px) and (max-height: 450px) {
       body {
         flex-direction: row;
@@ -146,10 +149,6 @@
       .content {
         max-width: 50%;
       }
-      .video-container {
-        max-width: 50%;
-        padding-bottom: 28%;
-      }
       .button-group {
         flex-direction: row;
         flex-wrap: wrap;
@@ -157,8 +156,6 @@
         align-items: flex-start;
       }
     }
-
-    /* New Landscape Optimization for All Mobile Devices */
     @media screen and (max-height: 450px) and (orientation: landscape) {
       body {
         flex-direction: row;
@@ -168,52 +165,36 @@
         align-items: center;
         text-align: center;
       }
-
       .logo {
         width: 80px;
         margin-bottom: 10px;
       }
-
       .content {
         max-width: 48%;
       }
-
       h1 {
         font-size: 20px;
       }
-
       p {
         font-size: 14px;
         line-height: 1.4;
         max-width: 100%;
       }
-
       .button-group {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
         gap: 8px;
       }
-
       .download-btn {
         padding: 10px 14px;
         font-size: 14px;
       }
-
-      .video-container {
-        max-width: 48%;
-        padding-bottom: 30%;
-      }
     }
   </style>
-  <script type='text/javascript' src='//inactionaccompanyingstress.com/76/23/f8/7623f8d5a40336facf080f42ac7d3de9.js'></script>
 </head>
 <body>
-  <img
-    class="logo"
-    src="https://i.ibb.co/prQfDtjs/Photoroom-20250512-203608.png"
-    alt="NXB PREMIUM Logo"
-  />
+  <img class="logo" src="https://i.ibb.co/prQfDtjs/Photoroom-20250512-203608.png" alt="NXB PREMIUM Logo" />
   <div class="content">
     <h1>NXB PREMIUM</h1>
     <p>
@@ -223,12 +204,11 @@
       Most local channels are included, and since it’s <b>server-sided</b>, it updates automatically.  
       Try it now!
     </p>
-
     <div class="button-group">
       <a class="download-btn coffee-btn" href="https://i.ibb.co/PZPqbFJC/Photoroom-20250307-172750-edit-14239319956158.png" download>
         <i class="fas fa-mug-hot"></i> Buy Me a Coffee
       </a>
-      <a class="download-btn codegen-btn" href="https://nxbpremiumversion3codegen.pages.dev/" download>
+      <a class="download-btn codegen-btn" onclick="openModal()">
         <i class="fas fa-key"></i> Code Generator
       </a>
       <a class="download-btn premium-btn" href="https://nxbprem.netlify.app/.apk" download>
@@ -236,40 +216,48 @@
       </a>
     </div>
   </div>
+
+  <!-- Modal -->
+  <div class="modal" id="popupModal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal()">Close</button>
+      <iframe src="https://nxbpremiumversion3codegen.pages.dev/"></iframe>
+    </div>
+  </div>
+
   <b>Note:</b> This app may be flagged by Google because it is not on the Play Store. To bypass Google Play Protect, go to the Play Store app → click your profile → select "Play Protect" → and disable "Scan apps with Play Protect."
 
-<script>
-(() => {
-    // Block DevTools
-    setInterval(() => {
+  <script>
+    function openModal() {
+      document.getElementById('popupModal').style.display = 'flex';
+    }
+    function closeModal() {
+      document.getElementById('popupModal').style.display = 'none';
+    }
+
+    // Anti-debugging
+    (() => {
+      setInterval(() => {
         const start = performance.now();
         debugger;
         if (performance.now() - start > 50) {
-            document.body.innerHTML = "<h1>DevTools are not allowed!</h1>";
+          document.body.innerHTML = "<h1>DevTools are not allowed!</h1>";
         }
-    }, 1000);
-
-    // Disable right-click
-    document.addEventListener("contextmenu", e => e.preventDefault());
-
-    // Disable F12, Ctrl+Shift+I/J, Ctrl+U
-    document.addEventListener("keydown", e => {
+      }, 1000);
+      document.addEventListener("contextmenu", e => e.preventDefault());
+      document.addEventListener("keydown", e => {
         if (
-            e.keyCode === 123 || // F12
-            (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J")) || // Ctrl+Shift+I/J
-            (e.ctrlKey && e.key === "u") // Ctrl+U
+          e.keyCode === 123 ||
+          (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J")) ||
+          (e.ctrlKey && e.key === "u")
         ) {
-            e.preventDefault();
+          e.preventDefault();
         }
-    });
-
-    // Disable text selection and dragging
-    document.addEventListener("selectstart", e => e.preventDefault());
-    document.addEventListener("dragstart", e => e.preventDefault());
-
-    // Clear console outputs
-    ["log", "debug", "warn", "error"].forEach(fn => console[fn] = () => {});
-})();
-</script>
+      });
+      document.addEventListener("selectstart", e => e.preventDefault());
+      document.addEventListener("dragstart", e => e.preventDefault());
+      ["log", "debug", "warn", "error"].forEach(fn => console[fn] = () => {});
+    })();
+  </script>
 </body>
 </html>
